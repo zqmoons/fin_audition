@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>泽稷高清视频</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+		 /*清除移动端点击高亮效果*/
+	  -webkit-tap-highlight-color: transparent;
+		   /*清除移动端默认的阴影效果*/
+	  -webkit-appearance: none;
+	 }
+	 html{
+	 	height: 100%;
+	 }
+	 body{
+	 	height: 100%;
+	 }
+	 .zj-wrap{
+	 	max-width: 750px;
+	 	width: 100%;
+	 	margin: 0 auto;
+	 }
+	 .zj-header{
+	 	position: relative;
+	 	height: 53px;
+	 	line-height: 53px;
+	 	border-bottom: 1px solid #e5e5e5;
+	 	font-size: 18px;
+
+	 }
+	 .zj-header h3{
+	 	text-align: center;
+	 }
+	 .zj-header .returnTop{
+	 	position: absolute;
+	 	top: 0;
+	 	left: 0;
+	 	height: 100%;
+	 	width: 70px;
+	 	background: url(images/return.svg) no-repeat center center/25px;
+	 	cursor: pointer;
+
+	 }
+	 .playVideo{
+	 	width: 90%;
+	 	margin: 20px auto;
+	 	height: 420px;
+	 	max-height: 70%;
+	 	min-height: 60%;
+	 }
+	 .line{
+	 	width: 100%;
+	 	height: 1px;
+	 	background: #e5e5e5
+	 }
+	 .more{
+	 	padding-right: 5%;
+		text-align: right;
+		margin-top: 10px;
+		margin-bottom: 15px;
+
+	 }
+	 .more span{
+	 	display: inline-block;
+	 	text-decoration: none;
+	 	color: #000;
+	 	font:  14px '微软雅黑';
+	 	height: 30px;
+	 	line-height: 30px;
+	 	padding: 0 15px;
+	 	text-align: center;
+	 	background: #cf010e;
+	 	color: #fff;
+	 	border-color:#9c010b;
+	 }
+
+
+	</style>
+	
+
+
+</head>
+<body>
+	<div class="zj-wrap">
+		<div class="zj-header">
+			<div class="returnTop"></div>
+			<h3>泽稷教育</h3>
+		</div>
+		<div class="playVideo">
+		</div>
+		<div class="line"></div>
+		<div class="more"><span>金融试听视频</sapn></div>
+		
+	</div>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src='//player.polyv.net/script/polyvplayer.min.js'></script>
+	<script>
+		$(function(){
+			// 初始化视频
+			var dataId = localStorage.getItem("dataId");
+			console.log( dataId )
+			getVideo(dataId);
+			function getVideo(vid) {
+			    players = polyvObject('.playVideo').videoPlayer({
+			        'width': '100%',
+			        'height': '100%',
+			        'vid': vid
+			    });
+			}
+			// 初始化标题
+			var title = localStorage.getItem("tit");
+			if(title.length>20){
+				title = title.substr(0,20)+'...';
+				$('.zj-header h3').css({'fontSize':'16px','paddingLeft':'15px'})
+			}
+			$('.zj-header h3').html(title);
+			// 返回上一页
+			$('.returnTop,.more span').click(function(){
+				window.history.back(-1); 
+			});
+
+			// 获取父级页面滚动的距离，传回去
+			
+		});
+	</script>
+</body>
+</html>

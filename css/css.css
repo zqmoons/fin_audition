@@ -1,0 +1,1353 @@
+/*匹配所以普的元素包括伪类元素*/
+
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    /*清除移动端点击高亮效果*/
+    -webkit-tap-highlight-color: transparent;
+    /*轻击*/
+}
+
+html {
+    font-size: 40px;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+body {
+    width: 100%;
+    min-width: 1200px;
+    overflow: hidden;
+    font-family: "Adobe 黑体 Std", "Microsoft Yahei", Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", sans-serif;
+    font-size: 14px;
+    background: #f7f8f8;
+    overflow: scroll;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #333;
+}
+
+input[type="text"],
+input[type="search"],
+input[type="tel"],
+textarea {
+    border: none;
+    outline: none;
+    resize: none;
+    /*清除移动端默认的阴影效果*/
+    -webkit-appearance: none;
+    /*设置表单元素不自带浏览器默认样式*/
+}
+
+img {
+    vertical-align: middle;
+    border: none;
+}
+
+
+/*===========common css  公用样式*/
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+
+/*清除浮动*/
+
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.container {
+    position: relative;
+    width: 1200px;
+}
+
+
+/* 多行溢出 */
+
+html,
+body {
+    position: relative;
+    height: 100%;
+    font-size: 40px;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 335120 */
+  src: url('//at.alicdn.com/t/font_335120_68812kqk99seb3xr.eot');
+  src: url('//at.alicdn.com/t/font_335120_68812kqk99seb3xr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_335120_68812kqk99seb3xr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_335120_68812kqk99seb3xr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_335120_68812kqk99seb3xr.svg#iconfont') format('svg');
+}
+
+#wrap {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section {
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 100% !important;
+}
+
+.w {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+
+/* 设置一下小圆点的样式 */
+
+#menu {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    list-style-type: none;
+    z-index: 70;
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#menu li {
+    position: relative;
+    list-style: none;
+    background: transparent;
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #2075bf;
+    opacity: 1;
+    margin: 0 auto;
+    border-radius: 50%;
+    margin-bottom: 12px !important;
+}
+
+#menu li a {
+    display: block;
+    width: 10px;
+    height: 10px;
+}
+
+#menu .active {
+    width: 16px;
+    height: 16px;
+    background: #2075bf;
+}
+
+
+/* 第一屏 */
+
+.slide1 {
+    background: url(../images/banner.png) no-repeat center / cover;
+}
+
+.slide1 .logo-wrap {
+    width: 735px;
+    height: 160px;
+    border-left: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slide1 .logo {
+    position: absolute;
+    top: 22px;
+    left: 38px;
+}
+
+.slide1 .logo img {
+    margin-right: 38px;
+}
+
+.slide1:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 583px;
+    height: 290px;
+    border-right: none;
+}
+
+
+/* 第二屏 */
+
+.slide2 .container {
+    width: 79%;
+}
+
+.slide2 a {
+    display: block;
+}
+
+.slide2 li {
+    position: relative;
+    width: 25%;
+    float: left;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.slide2 li:nth-child(2n-1) div:before {
+    top: 0;
+}
+
+.slide2 li:nth-child(2n) div:before {
+    bottom: 0;
+}
+
+.slide2 li div {
+    position: relative;
+    background: url(../images/b1.png) no-repeat center;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.slide2 li div:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0.5;
+    background: #0070c3;
+    transition: all 0.4s ease;
+}
+
+.slide2 li div:hover {
+    z-index: 5;
+    transform: scale(1.2);
+    transition: all 0.5s;
+}
+
+.slide2 li div:hover:before {
+    opacity: 0.2;
+    transition: all 0.5s;
+    transform: scale(0);
+}
+
+.slide2 li img {
+    width: 100%;
+}
+
+.slide2 li p {
+    width: 100%;
+    transition: all 0s;
+    line-height: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 24px;
+}
+
+.slide2 li p i {
+    font-style: normal;
+    line-height: 35px;
+}
+
+.slide2 li p span {
+    margin: 0 8px;
+    display: inline-block;
+    font-size: 30px;
+    line-height: 20px;
+    overflow: hidden;
+}
+
+
+/* 第三屏 */
+
+.no {
+    margin-left: 0 !important;
+}
+
+.act img {
+    border: 1px solid #000;
+    /* box-shadow: 0 18px 20px rgba(0, 0, 0, 0.3); */
+}
+
+.slide3 {
+    background: #dcdcdc;
+}
+
+.slide3 .container {
+    position: relative;
+    width: 83.69%;
+}
+
+.slide3 .container .info {
+    display: none;
+    height: 500px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    padding-left: 80px;
+    padding-top: 60px;
+    line-height: 1;
+    background: #fff url(../images/slide2Bg.png) no-repeat 55% center;
+}
+
+.slide3 .container .infos .info:first-child {
+    display: block;
+}
+
+.slide3 .info .tit {
+    position: relative;
+    font-size: 60px;
+    font-weight: bold;
+    color: #517cb7;
+    margin-left: 1em;
+}
+
+.slide3 .info .tit:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    transform: translate(-100%, -50%);
+    width: 15px;
+    height: 15px;
+    background: #517cb7;
+}
+
+.slide3 .info .con {
+    margin-top: 45px;
+    width: 980px;
+    text-align: justify;
+    font-size: 28px;
+    color: #4f4e4e;
+    line-height: 50px;
+    text-indent: 2em;
+    height: 240px;
+}
+
+.slide3 .info .more {
+    margin-top: 20px;
+}
+
+.slide3 .info .more a {
+    font-size: 18px;
+    color: #9c9c9c;
+}
+
+.slide3 .info .more a span {
+    font: 16px '宋体';
+    letter-spacing: -2px;
+}
+
+.slide3 .ph {
+    position: relative;
+    overflow: hidden;
+}
+
+.slide3 .phWall {
+    position: relative;
+}
+
+.slide3 .swiper-btn {
+    position: absolute;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.slide3 .swiper-prev {
+    left: 0;
+    -webkit-transform: translate(-200%, -25%)
+}
+
+.slide3 .swiper-next {
+    right: 0;
+    transform: translate(200%, -25%);
+    -webkit-transform: translate(200%, -25%);
+}
+
+.slide3 .ph li a {
+    display: block;
+    margin-top: 20px;
+}
+
+.slide3 .ph li img {
+    width: 95%;
+}
+
+.slide3 .ph .swiper-slide-prev {
+    opacity: 0;
+}
+.slide3 .slideEnd{
+    position: relative;
+}
+.slide3 .slideEnd span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-20%);
+    width: 100%;
+    font-size: 25px;
+}
+
+/* 第四屏 */
+
+.fp-tableCell {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.slide4 {
+    background: -webkit-linear-gradient(to bottom, #779cd9, #c5d9fb, #779cd9);
+    background: -o-linear-gradient(to bottom, #779cd9, #c5d9fb, #779cd9);
+    background: linear-gradient(to bottom, #779cd9, #c5d9fb, #779cd9);
+}
+
+.slide4 .w {
+    width: 100%;
+    height: 100%;
+}
+
+.slide4 .container {
+    width: 90.93%;
+}
+
+.slide4 li {
+    position: relative;
+    cursor: pointer;
+    float: left;
+    width: 16.5%;
+    background: #fff;
+    margin-left: 4.35%;
+    box-sizing: border-box;
+    padding: 10px;
+    padding-bottom: 0;
+    transition: all 0.3s;
+}
+
+.slide4 li > a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.slide4 li:hover .cover {
+    height: 100%;
+}
+
+.slide4 li:hover .icon {
+    -ms-transform: translate(-50%, 99%);
+    -moz-transform: translate(-50%, 99%);
+    -webkit-transform: translate(-50%, 99%);
+    -o-transform: translate(-50%, 99%);
+    transform: translate(-50%, 99%);
+    transform: translate(-50%, 90%) scale(0.8);
+}
+
+.slide4 li > div {
+    position: relative;
+}
+
+.slide4 li > div:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide4 li > div .cover {
+    transition: all 0.8s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background: rgba(234, 199, 3, 0.8);
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: justify;
+}
+
+.slide4 li > div .cover span {
+    position: absolute;
+    top: 16%;
+    left: 0;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+.slide4 li > div .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    transition: all 0.8s;
+}
+
+.slide4 li img {
+    width: 100%;
+}
+
+.slide4 li p {
+    height: 75px;
+    font: bold 16px/75px "黑体";
+}
+
+.slide4 li:hover {
+    transform: scale(1.25);
+}
+
+.slide4 .active {
+    transform: scale(1.25);
+}
+
+.slide4 .active .cover {
+    height: 100%;
+}
+
+.slide4 .active .icon {
+    -ms-transform: translate(-50%, 99%);
+    -moz-transform: translate(-50%, 99%);
+    -webkit-transform: translate(-50%, 99%);
+    -o-transform: translate(-50%, 99%);
+    transform: translate(-50%, 99%);
+    transform: translate(-50%, 110%) scale(0.8);
+}
+
+.slide4 .last > div .cover span {
+    position: absolute;
+    top: 30%;
+}
+
+
+/* 第五屏 */
+
+.slide5 {
+    background: #eeeeee;
+}
+
+.slide5 .container {
+    position: relative;
+    width: 92.18%;
+    margin-left: 4%;
+}
+
+.slide5 .container .m {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.slide5 .container .stus {
+    width: 45.58%;
+    margin-right: 8.8%;
+}
+
+.slide5 .container .stus li {
+    position: relative;
+    cursor: pointer;
+    border: 2px solid #375a89;
+    box-sizing: border-box;
+    border-radius: 22px;
+    width: 100%;
+    height: 260px;
+    background: #fff;
+    text-align: left;
+    padding: 10px 0 10px 12px;
+    margin-bottom: 35px;
+}
+
+.slide5 .container .stus li:hover {
+    background: #375a89;
+}
+
+.slide5 .container .stus li:hover .con {
+    color: #fff;
+}
+
+.slide5 .container .stus li:hover .con .line {
+    background: #fff;
+}
+
+.slide5 .container .stus li > div:first-child {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    margin-right: 3.75%;
+}
+
+.slide5 .container .stus li img {
+    height: 100%;
+}
+
+.slide5 .container .stus li .con {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    box-sizing: border-box;
+    padding-left: 2.5%;
+    width: 64%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 10px;
+    color: #375a89;
+    background: url(../images/CFA.png) no-repeat center;
+}
+
+.slide5 .container .stus li .con span {
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.slide5 .container .stus li .con > p {
+    float: left;
+}
+
+.slide5 .container .stus li .con > p:last-child {
+    font-size: 46px;
+}
+
+.slide5 .container .stus li .con .line {
+    background: #375a89;
+    width: 2px;
+    height: 54px;
+    border-radius: 1;
+    margin: 0 8.83% 0 10.74%;
+}
+
+.slide5 .container .stus .active {
+    background: #375a89;
+}
+
+.slide5 .container .stus .active .con {
+    color: #fff;
+}
+
+.slide5 .container .stus .active .con .line {
+    background: #fff;
+}
+
+.slide5 .container .stu-vd {
+    position: relative;
+    width: 45%;
+}
+
+.slide5 .container .stu-vd .stu-video {
+    width: 100%;
+    height: 718px;
+    background: #000;
+    clear: both;
+}
+
+.slide5 .container .stu-vd a {
+    margin-top: 44px;
+    display: block;
+    float: left;
+    width: 47.5%;
+    height: 65px;
+    border: 1px solid #375a89 !important;
+    border-radius: 8px;
+    font-size: 24px;
+    line-height: 65px;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: middle;
+    color: #375a89;
+}
+
+.slide5 .container .stu-vd a:last-child {
+    margin-left: 5%;
+}
+
+.slide5 .container .stu-vd a span {
+    font-family: 'iconfont';
+    font-size: 30px;
+    color: #375a89;
+    line-height: 65px;
+    margin-left: 15px;
+    vertical-align: middle;
+}
+
+.slide5 .container .stu-vd a:hover {
+    border: 1px solid #ffd800 !important;
+    background: #ffd800;
+    color: #444444;
+}
+
+.slide5 .container .stu-vd a:hover span {
+    color: #444444;
+}
+
+.v {
+    height: 750px;
+    width: 800px;
+    background: #000;
+}
+
+
+/* 第六屏 */
+
+.cen {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.slide6 {
+    background: url(../images/footer.png) no-repeat center / cover;
+}
+
+.slide6 .container {
+    width: 75%;
+}
+
+.slide6 li {
+    position: relative;
+    height: 236px;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    margin-top: -1px;
+    color: #fff;
+}
+
+.slide6 li a {
+    color: #fff;
+}
+
+.slide6 .adv div {
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 11.15%;
+}
+.slide6 .adv .signUp{
+    margin-left: 45px;
+}
+
+.slide6 .adv p {
+    width: 130px;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 150px;
+}
+
+.slide6 .adv p a {
+    font-size: 30px;
+    color: #fff;
+    display: block;
+}
+
+.slide6 .adv p a:hover {
+    color: #ffd800;
+}
+
+.slide6 .adv p a:hover i {
+    color: #ffd800;
+}
+
+.slide6 .adv p a i {
+    display: block;
+    font-size: 60px;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.slide6 .adv p a span {
+    display: block;
+    transition: all 0.3s;
+}
+.slide6 .down  div{
+  display: inline-block;
+}
+.slide6 .down  div span{
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.slide6 .lun{
+  margin-right: 50px;
+}
+.slide6 .down  .down-wrap1{
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 320px;
+}
+.slide6 .down .down-wrap{
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 11.15%;
+}
+.slide6 .down  div img{
+
+}
+.slide6 .down p {
+    width: 130px;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 150px;
+}
+
+.slide6 .down p a {
+    font-size: 30px;
+    display: block;
+}
+
+.slide6 .down p a:hover {
+    color: #ffd800;
+}
+
+.slide6 .down p a:hover i {
+    color: #ffd800;
+}
+
+.slide6 .down p a i {
+    display: block;
+    font-size: 64px;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+.slide6 .down p a span {
+    display: block;
+    transition: all 0.3s;
+}
+
+.slide6 .more p {
+    font-size: 30px;
+    line-height: 42px;
+    text-align: right;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 98px;
+}
+
+
+/* 第七屏 start */
+
+.slide7 .w{
+    display: block;
+    margin: 0 auto;
+}
+.slide7 .container {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 4%;
+}
+
+.slide7 .container .cert-tit {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.slide7 .container .cert-tit span {
+    width: 190px;
+    height: 64px;
+    box-sizing: border-box;
+    border: 1px solid #151b5e;
+    display: inline-block;
+    margin: 0 35px;
+    font-size: 45px;
+    line-height: 64px;
+    text-align: center;
+    border-radius: 35px;
+    cursor: pointer;
+}
+
+.slide7 .container .cert-tit {
+    margin-bottom: 50px;
+}
+
+.slide7 .container .cert-tit .swiper-button-disabled {
+    background: #151b5e;
+    color: #fff;
+     box-shadow: 0 10px 10px 1px #dfdfdf;
+}
+
+.slide7 .container .cert-body {
+    padding-top: 45px;
+    border-top: 10px solid #222c6f;
+        margin: 0 10px 10px;
+}
+
+.slide7 .container .cert-body ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-around;
+}
+.slide7 li{
+  position: relative;
+  cursor: pointer;
+}
+.slide7 li .iconfont,
+.slide7 li span
+{
+  display: block;
+}
+.slide7 li .iconfont{
+  font-size: 80px;
+}
+.slide7 li span{
+  line-height: 1;
+  margin:20px 0 32px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.slide7 li span:before{
+  position: absolute;
+  bottom: 0;
+  left:50%;
+  transform: translate(-50%,4px);
+  content: '';
+  display: block;
+  width: 48px;
+  height: 4px;
+  background: #151b5e;
+  transtion: all 0.3s;
+  opacity: 0;
+}
+.slide7 li.active .iconfont{
+   color:#151b5e;
+}
+.slide7 li.active span{
+  color:#151b5e;
+}
+
+.slide7 li.active span:before{
+  opacity: 1;
+}
+.slide7 .container .cert-body .box{
+  position: relative;
+  margin-top: 40px;
+  box-shadow: 0 0 15px 1px #dfdfdf;
+  padding:45px 80px 0px;
+  text-align: justify;
+  text-indent: 2em;
+  box-sizing: border-box;
+  line-height: 48px;
+  font-size: 22px;
+  font-weight: lighter;
+}
+.slide7 .container .cert-body .box .con{
+    min-height: 200px;
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+.slide7 .container .cert-body .box .line{
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #e5e5e5;
+  margin-bottom: 35px;
+}
+.slide7 .container .cert-body .quo{
+  position: absolute;
+  top: 68px;
+  left: 0;
+  font-size: 80px;
+  font-style: italic;
+  color:#4f4e4e;
+}
+.slide7 .container .cert-body  .boxs .box{
+  display: none;
+}
+
+.slide7 .container .cert-body  .boxs .box:first-child{
+  display: block;
+}
+.slide7 .swiper-slide-next{
+  opacity: 0;
+}
+
+
+
+
+/* 第七屏 end */
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 1820px) {
+    .slide2 .container {
+        width: 85%;
+    }
+    .slide2 li p {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .slide2 li p span {
+        font-size: 19px;
+        line-height: 18px;
+    }
+    .slide5 .container .stus li .con {
+        transform: translateY(-50%) scale(0.8);
+    }
+    .slide5 .container .stus li img {
+        width: 180px;
+    }
+    .slide5 .container .stus li {
+        height: 205px;
+    }
+    .slide5 .container .stu-vd .stu-video {
+        width: 100%;
+        height: 570px;
+        background: #000;
+        clear: both;
+    }
+}
+
+@media (max-width: 1492px) {
+    .slide5 .container .stus li .con {
+        min-width: 392px;
+        transform: translateY(-50%) scale(0.8);
+    }
+    .slide5 .container .stus {
+        width: 49.58%;
+        margin-right: 4.8%;
+    }
+    .slide5 .container .stus li .con > p:last-child {
+        font-size: 40px;
+    }
+    .slide5 .container .stu-vd .stu-video {
+        width: 100%;
+        height: 570px;
+        background: #000;
+        clear: both;
+    }
+}
+@media (max-width: 1600px){
+   .slide6 .down  div img{
+        width: 135px;
+    }
+    .slide6 .adv div {
+        font-size: 30px;
+    }
+
+    .slide6 .adv p a,.slide6 .down p a{
+        font-size: 25px;
+        right: 80px;
+
+    }
+    .slide6 .adv p ,.slide6 .down p {
+        right: 80px;
+
+    }
+    .slide6 .more p{
+        font-size: 24px;
+    }
+    .slide6 .down  .down-wrap1{
+        right: 260px;
+    }
+}
+@media (max-width: 1600px) {
+    .slide6 .container {
+        width: 1200px;
+    }
+    .slide3 .container .info {
+        height: 450px;
+        background: #fff url(../images/slide2Bg.png) no-repeat 65% center;
+    }
+    .slide3 .info .tit {
+        font-size: 45px;
+    }
+    .slide3 .info .con {
+        width: 70%;
+        font-size: 24px;
+        margin-top: 30px;
+        line-height: 45px;
+        height: 235px;
+    }
+    .slide7 .container .cert-tit span{
+      width: 150px;
+      height: 50px;
+      line-height: 50px;
+      font-size: 35px;
+    }
+    .slide7 li .iconfont{
+      font-size: 70px;
+    }
+    .slide7 li span{
+      font-size: 22px;
+    }
+    .slide7 .container .cert-body .box .con {
+      font-size: 20px;
+      line-height: 40px;
+    }
+    .slide7 .container .cert-body .box .con-end{
+      font-size: 18px;
+    }
+    .slide6 .lun{
+  margin-right: 15px;
+}
+}
+@media (max-height: 1000px){
+        .slide7 .container .cert-body {
+            padding-top: 35px;
+            border-top: 6px solid #222c6f;
+            margin: 0 10px 10px;
+        }
+        .slide7 .container .cert-tit span{
+          width: 150px;
+          height: 50px;
+          line-height: 50px;
+          font-size: 35px;
+        }
+        .slide7 .container .cert-body .box{
+            margin-top: 20px;
+            padding: 25px 40px 0px;
+        }
+        .slide7 .container .cert-body .quo{
+            top: 38px;
+        }
+        .slide7 li .iconfont{
+          font-size: 52px;
+        }
+        .slide7 li span{
+          font-size: 22px;
+              margin: 16px 0 27px;
+        }
+        .slide7 .container .cert-tit{
+            margin-bottom: 40px;
+        }
+        .slide7 .container .cert-body .box .con {
+          font-size: 20px;
+          line-height: 40px;
+        }
+        .slide7 .container .cert-body .box .con-end{
+          font-size: 18px;
+        }
+        .slide6 .lun{
+      margin-right: 15px;
+    }
+}
+
+@media (max-width: 1410px) {
+    .slide4 li > div .cover span {
+        top: 5%;
+        font-size: 11px;
+        line-height: 18px !important;
+    }
+    .slide4 li:nth-child(2) > div .cover span {
+        top: 14%;
+    }
+    .slide4 li:hover .icon {
+        -ms-transform: translate(-50%, 99%);
+        -moz-transform: translate(-50%, 99%);
+        -webkit-transform: translate(-50%, 99%);
+        -o-transform: translate(-50%, 99%);
+        transform: translate(-50%, 99%);
+        transform: translate(-50%, 90%) scale(0.7);
+    }
+}
+
+
+/* 视频播放 */
+
+.mcover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    display: none;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.mcover .full-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.mcover .full-wrap .video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 640px;
+    height: 360px;
+    background: rgba(255, 255, 255, 0.3);
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.mcover .full-wrap .video-bg .video-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.mcover .full-wrap .close {
+    position: absolute;
+    top: -35px;
+    right: -35px;
+    width: 40px;
+    height: 40px;
+    background: url(../images/close.png) no-repeat center / cover;
+    opacity: 0.5;
+    cursor: pointer;
+}
